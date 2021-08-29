@@ -1,0 +1,390 @@
+<!DOCTYPE html><meta charset="UTF-8"> <head> <title id='Title'></title> </head>
+<style>
+    @font-face {
+        font-family: 'HP Simplified';
+        src: url('hpsimplified_rg-webfont.ttf');
+    }
+
+    body {
+        font-family: 'HP Simplified';
+    }
+
+    td.AlignCenter {
+        border: 1px solid black;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    td.AlignLeft {
+        margin-left: 1em;
+    }
+
+    td.AlignLeftFontSize {
+        margin-left: 1em;
+        font-size: 9px;
+    }
+
+    .passed {
+        background-color: #C6EFCE;
+    }
+
+    .failed {
+        background-color: #ff3300;
+    }
+
+    th {
+        border: 1px solid black;
+        padding-left: 5px;
+    }
+
+    table {
+        border: 1px solid black;
+        width: 800px;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    tr.Overlap {
+        word-wrap: break-word;
+    }
+
+    tr.uefiBlue {
+        background-color: #0096D5;
+        color: #fff;
+        word-wrap: break-word;
+    }
+</style>
+<script type="text/javascript">
+
+    function Begin() {
+
+        var desiredWidth = window.outerWidth;
+
+        var headerHeight = (document.getElementById("mainNav") || {}).offsetHeight;
+        var windowHeight = window.innerHeight;
+
+        AppendData();
+
+        var platformInfoElem = document.getElementById("tablesContainer");
+
+        var elemHeight = document.getElementById("PlatformInfo").offsetHeight;
+
+        var otherHeight = document.getElementById("productInfoContainer").clientHeight;
+
+        var desiredHeight = windowHeight - headerHeight - (elemHeight - platformInfoElem.offsetHeight) - 75;
+
+        platformInfoElem.style.width = desiredWidth;
+        platformInfoElem.style.height = desiredHeight + "px";
+    }
+
+    function AppendData() {
+        var data = [{"Id":"2b3d1a23-8194-4f40-b102-6bf6595e5020","ToolName":"Audio Driver Update","ToolVersion":"1.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"8/15/2021 9:20:34 PM","FormattedStopTime":"8/15/2021 9:21:19 PM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:44","LogData":"Ping DefaultGateway 192.168.1.1\r\nPing OptionsDontFragment = False\r\nPing OptionsTtl = 64\r\nPing DefaultGateway 192.168.1.1 Success\r\nPing RoundtripTime = 14 ms\r\nDrivers are already installed and up to date.\r\nTest passed.\r\n","Record":null},{"Id":"cf7d4afc-bd89-486d-92b8-ffa8f74ffc8e","ToolName":"Audio Record Test","ToolVersion":"1.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"8/15/2021 9:19:46 PM","FormattedStopTime":"8/15/2021 9:20:33 PM","FormattedResult":"Execution Failed","FailureId":"9AMA1F-000AP3-GXGH4J-22P913","ErrorCode":"10a","FormattedElapsedTime":"0:0:0:47","LogData":"WMI.DeviceID = SWD\\MMDEVAPI\\{0.0.0.00000000}.{597926A6-8A38-4DD2-9526-FEC8D89760F8}\r\nWMI.Name = Speaker (Realtek(R) Audio)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Speaker (Realtek(R) Audio)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWMI.DeviceID = SWD\\MMDEVAPI\\{0.0.1.00000000}.{8EE031A5-4714-45FE-928D-1BAC3F61B07A}\r\nWMI.Name = Stereo Mix (Realtek(R) Audio)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Stereo Mix (Realtek(R) Audio)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWMI.DeviceID = SWD\\MMDEVAPI\\{0.0.1.00000000}.{4BE88226-3D59-4343-B2C8-F1B7F4EC334F}\r\nWMI.Name = Microphone Array (Intel® Smart Sound Technology for Digital Microphones)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Microphone Array (Intel® Smart Sound Technology for Digital Microphones)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWaveInstance.DeviceNumber = 0\r\nWaveInstance.ProductName = Microphone Array (Intel® Smart \r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc311-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\nWaveInstance.DeviceNumber = 1\r\nWaveInstance.ProductName = Stereo Mix (Realtek(R) Audio)\r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc311-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\nWaveInstance.DeviceNumber = 0\r\nWaveInstance.ProductName = Speaker (Realtek(R) Audio)\r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc310-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\n------------------------------------------------\r\n------------- new microphones test -------------\r\n------------------------------------------------\r\nWMI.DeviceID = SWD\\MMDEVAPI\\{0.0.0.00000000}.{597926A6-8A38-4DD2-9526-FEC8D89760F8}\r\nWMI.Name = Speaker (Realtek(R) Audio)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Speaker (Realtek(R) Audio)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWMI.DeviceID = SWD\\MMDEVAPI\\{0.0.1.00000000}.{8EE031A5-4714-45FE-928D-1BAC3F61B07A}\r\nWMI.Name = Stereo Mix (Realtek(R) Audio)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Stereo Mix (Realtek(R) Audio)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWMI.DeviceID = SWD\\MMDEVAPI\\{0.0.1.00000000}.{4BE88226-3D59-4343-B2C8-F1B7F4EC334F}\r\nWMI.Name = Microphone Array (Intel® Smart Sound Technology for Digital Microphones)\r\nWMI.Description = Audio Endpoint\r\nWMI.Caption = Microphone Array (Intel® Smart Sound Technology for Digital Microphones)\r\nWMI.PNPClass = AudioEndpoint\r\nWMI.Manufacturer = Microsoft\r\nWMI.Service = \r\nWMI.Present = True\r\nWMI.Status = OK\r\nWMI.ConfigManagerErrorCode = 0\r\n--------------\r\nWMI - This device is working properly.\r\n--------------\r\n\r\nWaveInstance.DeviceNumber = 0\r\nWaveInstance.ProductName = Microphone Array (Intel® Smart \r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc311-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\nWaveInstance.DeviceNumber = 1\r\nWaveInstance.ProductName = Stereo Mix (Realtek(R) Audio)\r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc311-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\nMMDevice.DeviceFriendlyName = Intel® Smart Sound Technology for Digital Microphones\r\nMMDevice.FriendlyName = Microphone Array (Intel® Smart Sound Technology for Digital Microphones)\r\nMMDevice.ID = {0.0.1.00000000}.{4be88226-3d59-4343-b2c8-f1b7f4ec334f}\r\nMMDevice.State = Active\r\nMMDevice.DataFlow = Capture\r\nMMDevice.AudioEndpointVolume.Mute = False\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevel = 30.23987\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevelScalar = 1\r\n\r\nMMDevice.DeviceFriendlyName = Realtek(R) Audio\r\nMMDevice.FriendlyName = Stereo Mix (Realtek(R) Audio)\r\nMMDevice.ID = {0.0.1.00000000}.{8ee031a5-4714-45fe-928d-1bac3f61b07a}\r\nMMDevice.State = Active\r\nMMDevice.DataFlow = Capture\r\nMMDevice.AudioEndpointVolume.Mute = False\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevel = 2.399994\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevelScalar = 0.6734404\r\n\r\nWaveInstance.DeviceNumber = 0\r\nWaveInstance.ProductName = Speaker (Realtek(R) Audio)\r\nWaveInstance.Channels = 2\r\nWaveInstance.SupportsWaveFormat = True\r\nWaveInstance.ManufacturerGuid = d5a47fa8-6d98-11d1-a21a-00a0c9223196\r\nWaveInstance.ProductGuid      = e36dc310-6d9a-11d1-a21a-00a0c9223196\r\nWaveInstance.NameGuid         = 00000000-0000-0000-0000-000000000000\r\n\r\nMMDevice.DeviceFriendlyName = Realtek(R) Audio\r\nMMDevice.FriendlyName = Speaker (Realtek(R) Audio)\r\nMMDevice.ID = {0.0.0.00000000}.{597926a6-8a38-4dd2-9526-fec8d89760f8}\r\nMMDevice.State = Active\r\nMMDevice.DataFlow = Render\r\nMMDevice.AudioEndpointVolume.Mute = False\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevel = 0\r\nMMDevice.AudioEndpointVolume.MasterVolumeLevelScalar = 1\r\n\r\nEvaluating (0) Microphone Array (Intel® Smart \r\nMax = 3.051758E-05\r\nMin = -3.051758E-05\r\nLowSound = True\r\nNoSound = True\r\nVolume was very low.\r\nMicrophone appears to be not working\r\nEvaluating (1) Stereo Mix (Realtek(R) Audio)\r\nMax = 0.9999695\r\nMin = -1\r\nLowSound = False\r\nNoSound = False\r\nTest failed.\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"8/13/2021 7:24:14 AM","FormattedStopTime":"8/13/2021 7:24:18 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4489\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4489\r\nMaxError = 1\r\nCycleCount = 18\r\nTemperature = 25\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4305\r\nCellVoltage2 = 4308\r\nCellVoltage3 = 4302\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-08-13 07-24-15 --------------------------------------\r\n2021-08-13 07-24-15 BatteryTest： 1.17.5.0\r\n2021-08-13 07-24-15 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-08-13 07-24-15 Battery Test Started\r\n2021-08-13 07-24-15 CASL Found in HP Folder\r\n2021-08-13 07-24-15 CASL Version: 7.1.15.1\r\n2021-08-13 07-24-15 CASL File Version: 7.1.15.1\r\n2021-08-13 07-24-16 Battery Health Manager section was not found.\r\n2021-08-13 07-24-16 Battery Care Function section was not found.\r\n2021-08-13 07-24-16 Adaptive Battery Extender section shows *Enabled.\r\n2021-08-13 07-24-16 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-08-13 07-24-16 Raw dump of XML Data for Battery 0\r\n2021-08-13 07-24-16 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4489</LastFullChargeCapacity><RemainingCapacity>4489</RemainingCapacity><MaxError>1</MaxError><CycleCount>18</CycleCount><Temperature>25</Temperature><Voltage>12915</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4305</CellVoltage1><CellVoltage2>4308</CellVoltage2><CellVoltage3>4302</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"7/27/2021 8:00:18 AM","FormattedStopTime":"7/27/2021 8:00:21 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 17\r\nTemperature = 30\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4338\r\nCellVoltage2 = 4337\r\nCellVoltage3 = 4336\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-07-27 08-00-18 --------------------------------------\r\n2021-07-27 08-00-18 BatteryTest： 1.17.5.0\r\n2021-07-27 08-00-18 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-07-27 08-00-18 Battery Test Started\r\n2021-07-27 08-00-18 CASL Found in HP Folder\r\n2021-07-27 08-00-18 CASL Version: 7.1.15.1\r\n2021-07-27 08-00-18 CASL File Version: 7.1.15.1\r\n2021-07-27 08-00-19 Battery Health Manager section was not found.\r\n2021-07-27 08-00-19 Battery Care Function section was not found.\r\n2021-07-27 08-00-19 Adaptive Battery Extender section shows *Enabled.\r\n2021-07-27 08-00-20 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-07-27 08-00-20 Raw dump of XML Data for Battery 0\r\n2021-07-27 08-00-20 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>17</CycleCount><Temperature>30</Temperature><Voltage>13011</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4338</CellVoltage1><CellVoltage2>4337</CellVoltage2><CellVoltage3>4336</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"7/20/2021 8:00:21 AM","FormattedStopTime":"7/20/2021 8:00:25 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 17\r\nTemperature = 29\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4355\r\nCellVoltage2 = 4353\r\nCellVoltage3 = 4353\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-07-20 08-00-22 --------------------------------------\r\n2021-07-20 08-00-22 BatteryTest： 1.17.5.0\r\n2021-07-20 08-00-22 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-07-20 08-00-22 Battery Test Started\r\n2021-07-20 08-00-22 CASL Found in HP Folder\r\n2021-07-20 08-00-22 CASL Version: 7.1.15.1\r\n2021-07-20 08-00-22 CASL File Version: 7.1.15.1\r\n2021-07-20 08-00-23 Battery Health Manager section was not found.\r\n2021-07-20 08-00-23 Battery Care Function section was not found.\r\n2021-07-20 08-00-23 Adaptive Battery Extender section shows *Enabled.\r\n2021-07-20 08-00-24 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-07-20 08-00-24 Raw dump of XML Data for Battery 0\r\n2021-07-20 08-00-24 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>17</CycleCount><Temperature>29</Temperature><Voltage>13062</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4355</CellVoltage1><CellVoltage2>4353</CellVoltage2><CellVoltage3>4353</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.7.0.0)","Instance":null,"FormattedStartTime":"7/13/2021 8:00:33 AM","FormattedStopTime":"7/13/2021 8:00:36 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 16\r\nTemperature = 27\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4365\r\nCellVoltage2 = 4365\r\nCellVoltage3 = 4365\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-07-13 08-00-34 --------------------------------------\r\n2021-07-13 08-00-34 BatteryTest： 1.17.5.0\r\n2021-07-13 08-00-34 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-07-13 08-00-34 Battery Test Started\r\n2021-07-13 08-00-34 CASL Found in HP Folder\r\n2021-07-13 08-00-34 CASL Version: 7.1.15.1\r\n2021-07-13 08-00-34 CASL File Version: 7.1.15.1\r\n2021-07-13 08-00-34 Battery Health Manager section was not found.\r\n2021-07-13 08-00-35 Battery Care Function section was not found.\r\n2021-07-13 08-00-35 Adaptive Battery Extender section shows *Enabled.\r\n2021-07-13 08-00-35 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-07-13 08-00-35 Raw dump of XML Data for Battery 0\r\n2021-07-13 08-00-35 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>16</CycleCount><Temperature>27</Temperature><Voltage>13095</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4365</CellVoltage1><CellVoltage2>4365</CellVoltage2><CellVoltage3>4365</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"7/6/2021 8:05:15 AM","FormattedStopTime":"7/6/2021 8:05:18 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:2","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4504\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4083\r\nMaxError = 2\r\nCycleCount = 15\r\nTemperature = 28\r\nCurrent = 928\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4380\r\nCellVoltage2 = 4390\r\nCellVoltage3 = 4392\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-07-06 08-05-16 --------------------------------------\r\n2021-07-06 08-05-16 BatteryTest： 1.17.5.0\r\n2021-07-06 08-05-16 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-07-06 08-05-16 Battery Test Started\r\n2021-07-06 08-05-16 CASL Found in HP Folder\r\n2021-07-06 08-05-16 CASL Version: 7.1.15.1\r\n2021-07-06 08-05-16 CASL File Version: 7.1.15.1\r\n2021-07-06 08-05-16 Battery Health Manager section was not found.\r\n2021-07-06 08-05-16 Battery Care Function section was not found.\r\n2021-07-06 08-05-16 Adaptive Battery Extender section shows *Enabled.\r\n2021-07-06 08-05-17 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-07-06 08-05-17 Raw dump of XML Data for Battery 0\r\n2021-07-06 08-05-17 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4504</LastFullChargeCapacity><RemainingCapacity>4083</RemainingCapacity><MaxError>2</MaxError><CycleCount>15</CycleCount><Temperature>28</Temperature><Voltage>13161</Voltage><Current>928</Current><DesignVoltage>11550</DesignVoltage><StatusWord>128</StatusWord><CellVoltage1>4380</CellVoltage1><CellVoltage2>4390</CellVoltage2><CellVoltage3>4392</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"6/29/2021 8:00:09 AM","FormattedStopTime":"6/29/2021 8:00:12 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:2","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4486\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4486\r\nMaxError = 2\r\nCycleCount = 13\r\nTemperature = 29\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4351\r\nCellVoltage2 = 4350\r\nCellVoltage3 = 4351\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-06-29 08-00-10 --------------------------------------\r\n2021-06-29 08-00-10 BatteryTest： 1.17.5.0\r\n2021-06-29 08-00-10 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-06-29 08-00-10 Battery Test Started\r\n2021-06-29 08-00-10 CASL Found in HP Folder\r\n2021-06-29 08-00-10 CASL Version: 7.1.15.1\r\n2021-06-29 08-00-10 CASL File Version: 7.1.15.1\r\n2021-06-29 08-00-11 Battery Health Manager section was not found.\r\n2021-06-29 08-00-11 Battery Care Function section was not found.\r\n2021-06-29 08-00-11 Adaptive Battery Extender section shows *Enabled.\r\n2021-06-29 08-00-11 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-06-29 08-00-11 Raw dump of XML Data for Battery 0\r\n2021-06-29 08-00-11 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4486</LastFullChargeCapacity><RemainingCapacity>4486</RemainingCapacity><MaxError>2</MaxError><CycleCount>13</CycleCount><Temperature>29</Temperature><Voltage>13052</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4351</CellVoltage1><CellVoltage2>4350</CellVoltage2><CellVoltage3>4351</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"6/22/2021 8:00:11 AM","FormattedStopTime":"6/22/2021 8:00:14 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 11\r\nTemperature = 29\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4369\r\nCellVoltage2 = 4366\r\nCellVoltage3 = 4364\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-06-22 08-00-12 --------------------------------------\r\n2021-06-22 08-00-12 BatteryTest： 1.17.5.0\r\n2021-06-22 08-00-12 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-06-22 08-00-12 Battery Test Started\r\n2021-06-22 08-00-12 CASL Found in HP Folder\r\n2021-06-22 08-00-12 CASL Version: 7.1.15.1\r\n2021-06-22 08-00-12 CASL File Version: 7.1.15.1\r\n2021-06-22 08-00-13 Battery Health Manager section was not found.\r\n2021-06-22 08-00-13 Battery Care Function section was not found.\r\n2021-06-22 08-00-13 Adaptive Battery Extender section shows *Enabled.\r\n2021-06-22 08-00-13 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-06-22 08-00-13 Raw dump of XML Data for Battery 0\r\n2021-06-22 08-00-13 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>11</CycleCount><Temperature>29</Temperature><Voltage>13099</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4369</CellVoltage1><CellVoltage2>4366</CellVoltage2><CellVoltage3>4364</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"6/15/2021 8:00:12 AM","FormattedStopTime":"6/15/2021 8:00:15 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:2","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 9\r\nTemperature = 29\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4372\r\nCellVoltage2 = 4371\r\nCellVoltage3 = 4373\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-06-15 08-00-13 --------------------------------------\r\n2021-06-15 08-00-13 BatteryTest： 1.17.5.0\r\n2021-06-15 08-00-13 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-06-15 08-00-13 Battery Test Started\r\n2021-06-15 08-00-13 CASL Found in HP Folder\r\n2021-06-15 08-00-13 CASL Version: 7.1.15.1\r\n2021-06-15 08-00-13 CASL File Version: 7.1.15.1\r\n2021-06-15 08-00-13 Battery Health Manager section was not found.\r\n2021-06-15 08-00-14 Battery Care Function section was not found.\r\n2021-06-15 08-00-14 Adaptive Battery Extender section shows *Enabled.\r\n2021-06-15 08-00-14 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-06-15 08-00-14 Raw dump of XML Data for Battery 0\r\n2021-06-15 08-00-14 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>9</CycleCount><Temperature>29</Temperature><Voltage>13115</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4372</CellVoltage1><CellVoltage2>4371</CellVoltage2><CellVoltage3>4373</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"6/8/2021 8:16:34 AM","FormattedStopTime":"6/8/2021 8:16:38 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 2\r\nCycleCount = 7\r\nTemperature = 25\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4348\r\nCellVoltage2 = 4349\r\nCellVoltage3 = 4347\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-06-08 08-16-35 --------------------------------------\r\n2021-06-08 08-16-35 BatteryTest： 1.17.5.0\r\n2021-06-08 08-16-35 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-06-08 08-16-35 Battery Test Started\r\n2021-06-08 08-16-35 CASL Found in HP Folder\r\n2021-06-08 08-16-35 CASL Version: 7.1.15.1\r\n2021-06-08 08-16-35 CASL File Version: 7.1.15.1\r\n2021-06-08 08-16-36 Battery Health Manager section was not found.\r\n2021-06-08 08-16-36 Battery Care Function section was not found.\r\n2021-06-08 08-16-37 Adaptive Battery Extender section shows *Enabled.\r\n2021-06-08 08-16-37 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-06-08 08-16-37 Raw dump of XML Data for Battery 0\r\n2021-06-08 08-16-37 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>2</MaxError><CycleCount>7</CycleCount><Temperature>25</Temperature><Voltage>13044</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4348</CellVoltage1><CellVoltage2>4349</CellVoltage2><CellVoltage3>4347</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"6/1/2021 8:00:08 AM","FormattedStopTime":"6/1/2021 8:00:11 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4454\r\nDesignCapacity = 4420\r\nChargeCapacity = 100 %\r\nRemainingCapacity = 4454\r\nMaxError = 1\r\nCycleCount = 5\r\nTemperature = 25\r\nCurrent = 264\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4398\r\nCellVoltage2 = 4401\r\nCellVoltage3 = 4400\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-06-01 08-00-08 --------------------------------------\r\n2021-06-01 08-00-08 BatteryTest： 1.17.5.0\r\n2021-06-01 08-00-08 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-06-01 08-00-08 Battery Test Started\r\n2021-06-01 08-00-08 CASL Found in HP Folder\r\n2021-06-01 08-00-08 CASL Version: 7.1.15.1\r\n2021-06-01 08-00-08 CASL File Version: 7.1.15.1\r\n2021-06-01 08-00-09 Battery Health Manager section was not found.\r\n2021-06-01 08-00-09 Battery Care Function section was not found.\r\n2021-06-01 08-00-09 Adaptive Battery Extender section shows *Enabled.\r\n2021-06-01 08-00-10 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-06-01 08-00-10 Raw dump of XML Data for Battery 0\r\n2021-06-01 08-00-10 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4454</LastFullChargeCapacity><RemainingCapacity>4454</RemainingCapacity><MaxError>1</MaxError><CycleCount>5</CycleCount><Temperature>25</Temperature><Voltage>13199</Voltage><Current>264</Current><DesignVoltage>11550</DesignVoltage><StatusWord>128</StatusWord><CellVoltage1>4398</CellVoltage1><CellVoltage2>4401</CellVoltage2><CellVoltage3>4400</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","ToolName":"Battery Health Monitor","ToolVersion":"1.17.5.0 (1.6.9.0)","Instance":null,"FormattedStartTime":"5/25/2021 8:00:23 AM","FormattedStopTime":"5/25/2021 8:00:26 AM","FormattedResult":"Execution Passed","FailureId":null,"ErrorCode":"","FormattedElapsedTime":"0:0:0:3","LogData":"ToolError = 0\r\nIsCancel = False\r\nForceCancelToPass = False\r\nNumberOfBatteriesFound = 1\r\n\r\nBattery 0 -----------------------------------------------------------\r\nFileName = C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\RawDumpForBattery0.xml\r\nIndex = 0\r\nInstanceId = 1\r\nLastFullChargeCapacity = 4508\r\nDesignCapacity = 4420\r\nChargeCapacity = 101 %\r\nRemainingCapacity = 4508\r\nMaxError = 1\r\nCycleCount = 3\r\nTemperature = 26\r\nCurrent = 0\r\nDesignVoltage = 11550\r\nCellVoltage1 = 4349\r\nCellVoltage2 = 4351\r\nCellVoltage3 = 4348\r\nCellVoltage4 = 0\r\nSerialNumber = 01941 02/17/2021\r\nManufacturer = 333-2C-3A-A\r\nCTLabel = 6JKCT08TZETAMT\r\nBHM = NA\r\nBCF = NA\r\nABO = Enabled\r\nABOS = Not Activated\r\nNonHP = 0\r\nRecalled = NA\r\nToolError = 0\r\n\r\n2021-05-25 08-00-24 --------------------------------------\r\n2021-05-25 08-00-24 BatteryTest： 1.17.5.0\r\n2021-05-25 08-00-24 Load options: BatteryTest.exe -dumpxml -x=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa -debuglog=C:\\Users\\Perri Duncan\\AppData\\Local\\Temp\\HPDIAGS\\b088469f-b159-4d7e-b4f9-0f1ed77a95aa\\debug.log \r\n2021-05-25 08-00-24 Battery Test Started\r\n2021-05-25 08-00-24 CASL Found in HP Folder\r\n2021-05-25 08-00-24 CASL Version: 7.1.15.1\r\n2021-05-25 08-00-24 CASL File Version: 7.1.15.1\r\n2021-05-25 08-00-25 Battery Health Manager section was not found.\r\n2021-05-25 08-00-25 Battery Care Function section was not found.\r\n2021-05-25 08-00-25 Adaptive Battery Extender section shows *Enabled.\r\n2021-05-25 08-00-25 Adaptive Battery Extender Status section shows *Not Activated.\r\n2021-05-25 08-00-25 Raw dump of XML Data for Battery 0\r\n2021-05-25 08-00-25 <?xml version=\"1.0\" encoding=\"utf-8\"?><GetBatteryInfoOutput xmlns=\"schemas-hp-com.casl\"><Output><Data><DesignCapacity>4420</DesignCapacity><LastFullChargeCapacity>4508</LastFullChargeCapacity><RemainingCapacity>4508</RemainingCapacity><MaxError>1</MaxError><CycleCount>3</CycleCount><Temperature>26</Temperature><Voltage>13048</Voltage><Current>0</Current><DesignVoltage>11550</DesignVoltage><StatusWord>224</StatusWord><CellVoltage1>4349</CellVoltage1><CellVoltage2>4351</CellVoltage2><CellVoltage3>4348</CellVoltage3><CellVoltage4>0</CellVoltage4><SerialNumber>01941 02/17/2021</SerialNumber><Manufacturer>333-2C-3A-A</Manufacturer><CTLabel>6JKCT08TZETAMT</CTLabel><HPBatteryType>0</HPBatteryType><BHM>NA</BHM><BCF>NA</BCF><ABO>Enabled</ABO><ABOS>Not Activated</ABOS><NonHP>0</NonHP><Recalled>NA</Recalled></Data></Output></GetBatteryInfoOutput>\r\n\r\n","Record":null}];
+        var platform = {"AgentSession":null,"CsoSession":null,"ExeName":"HpHwDiag"};
+        var systemInfo = {"Manufacturer":"HP","Model":"HP ENVY x360 Convertible 15m-es0xxx","System ID":"88B3","Product ID":"341T3UA#ABA","Memory Size":"16384 MB RAM","BIOS Date":"02/05/2021","BIOS Revision":"F.02","Serial Number":"8CG11155Z3","Operating System Image":"21WW1GIT601#SABA#DABA","Installed OS version":"2009 (10.0.19042)"}; // Workaround until we fix data with language agnostic strings
+        var summaryData = [{"Id":"2b3d1a23-8194-4f40-b102-6bf6595e5020","Name":"Audio Driver Update","Instance":null,"TotalRunTime":"00:00:44","TotalRuns":1,"LastResult":"Execution Passed","LastRunResultType":7},{"Id":"cf7d4afc-bd89-486d-92b8-ffa8f74ffc8e","Name":"Audio Record Test","Instance":null,"TotalRunTime":"00:00:47","TotalRuns":1,"LastResult":"Execution Failed","LastRunResultType":8},{"Id":"b088469f-b159-4d7e-b4f9-0f1ed77a95aa","Name":"Battery Health Monitor","Instance":null,"TotalRunTime":"00:00:35","TotalRuns":11,"LastResult":"Execution Passed","LastRunResultType":7}];
+        var button = document.getElementById('Expand');
+        button.innerHTML = "Expand / Collapse";
+
+        var button = document.getElementById('SaveFiles');
+        button.innerHTML = "Save Log Files";
+        //appendHeaderData(data['PlatformInfo']); // Workaround until we fix data with language agnostic strings
+        appendHeaderData(systemInfo);
+
+        if (platform['AgentSession']) {
+            var nodeToCreate = document.createElement("span");
+            nodeToCreate.id = platform['AgentSession'];
+            nodeToCreate.className = 'bold';
+            nodeToCreate.innerHTML = "<b>" + "AgentID" + ":" + "</b>" + platform['AgentSession'] + "</br>";
+            document.getElementById("productInfoContainer").appendChild(nodeToCreate);
+        }
+        if (platform['CsoSession']) {
+            var nodeToCreate = document.createElement("span");
+            nodeToCreate.id = platform['CsoSession'];
+            nodeToCreate.className = 'bold';
+            nodeToCreate.innerHTML = "<b>" + "CSONumber" + ":" + "</b>" + platform['CsoSession'] + "</br>" + "</br>" + "</br>";
+            document.getElementById("productInfoContainer").appendChild(nodeToCreate);
+        }
+        document.getElementById('Header').innerHTML = platform['ExeName'] +  "<br />" + "SessionLog";
+        document.getElementById('Title').innerHTML = data['ExeName'] + 'SessionLog';
+        createTables(summaryData, data);
+    }
+    function appendHeaderData(platforminfo) {
+        for (var i in platforminfo) {
+            if (platforminfo[i]) {
+                var nodeToCreate = document.createElement("span");
+                nodeToCreate.id = i;
+                nodeToCreate.className = 'bold';
+                nodeToCreate.innerHTML = "<div class='list-item-background even-space-row' style='max-width: 450px;'> <div class='col-xs-6 even-space-col'><span style='font-weight: bold;'>" + i + "</span></div>" + "<div class='col-xs-6 even-space-col' style='border-left: 1px solid #ddd;'>" + platforminfo[i] + "</div></div>";
+                document.getElementById("productInfoContainer").appendChild(nodeToCreate);
+            }
+        }
+    }
+    function createTables(summaryData, entries) {
+        for (var i = 0; i < summaryData.length; i++) {
+            var table = document.createElement('table');
+            var tablerow = table.insertRow(-1);
+            tablerow.className = "uefiBlue";
+
+            var newTh = document.createElement('th');
+            newTh.innerHTML = "Name";
+            newTh.style.width = "100px";
+            tablerow.appendChild(newTh);
+
+            newTh = document.createElement('th');
+            //newTh.innerHTML = "Total Runs Conducted";
+            newTh.innerHTML = "Runs";
+            newTh.style.width = "35px";
+            tablerow.appendChild(newTh);
+
+            newTh = document.createElement('th');
+            newTh.innerHTML = "Result";
+            newTh.style.width = "50px";
+            tablerow.appendChild(newTh);
+
+            newTh = document.createElement('th');
+            newTh.innerHTML = "Runtime";
+            newTh.style.width = "40px";
+            tablerow.appendChild(newTh);
+
+            newTh = document.createElement('th');
+            newTh.innerHTML = "Details";
+            tablerow.appendChild(newTh);
+            newTh.style.width = "40px";
+            table.appendChild(tablerow);
+
+            document.getElementById("tablesContainer").appendChild(table);
+            var newrow = table.insertRow(-1);
+            var stressorname = newrow.insertCell(0);
+            stressorname.innerHTML = summaryData[i]['Name'] + ' (' +entries[i]['Instance'] +')';
+            stressorname.className = "AlignCenter";
+            var totalruns = newrow.insertCell(1);
+            totalruns.innerHTML = summaryData[i]['TotalRuns'];
+            totalruns.className = "AlignCenter";
+            var result = newrow.insertCell(2);
+            var resultToAdd = getResult(summaryData[i]['LastResult']);
+            result.innerHTML = resultToAdd;
+            result.id = summaryData[i]['LastResult'];
+            var className = getResultTypeClass(summaryData[i]['LastRunResultType']);
+            result.className = "AlignCenter " + className;
+            var totalruntime = newrow.insertCell(3);
+            totalruntime.innerHTML = summaryData[i]['TotalRunTime'];
+            totalruntime.className = "AlignCenter";
+            var buttonrow = newrow.insertCell(4);
+            buttonrow.className = "AlignCenter";
+            var button = document.createElement('button');
+            button.id = 'tog' + summaryData[i]['Id'];
+            button.innerHTML = "Show";
+            //NEW
+            button.Tag =i;
+            button.onclick = function () {
+                var testName = this.id.substring(3, this.id.length);
+                toggleTable('tbl'+ this.Tag, testName);
+            }
+            buttonrow.appendChild(button);
+            createResultHeaderRow(summaryData[i],i);
+            for (var k = 0; k < entries.length; k++) {
+                if (entries[k]['Id'] == summaryData[i]['Id'] && entries[k]['Instance'] == summaryData[i] ['Instance']) {
+                    var entry = entries[k]['ToolName'];
+                    var entry2 = summaryData[i]['Name'];
+                    createLogTables(entries[k], i, k); //NEW
+                }
+            }
+            table.appendChild(newrow);
+            var linebreak = document.createElement('p');
+            document.getElementById("tablesContainer").appendChild(linebreak);
+        }
+    }
+    function createResultHeaderRow(summaryData,i) {
+        var newtable = document.createElement('table');
+        newtable.id = 'tbl'+ i;
+        newtable.style.display = 'none';
+        var tablerow = document.createElement('tr');
+        tablerow.className = "Overlap";
+
+        var newTh = document.createElement('th');
+        newTh.innerHTML = "Name";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Instance";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Version";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Start time";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Stop time";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Runtime";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Code";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Failure ID";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Result";
+        tablerow.appendChild(newTh);
+
+        newTh = document.createElement('th');
+        newTh.innerHTML = "Display Log";
+        tablerow.appendChild(newTh);
+
+        newtable.appendChild(tablerow);
+        document.getElementById("tablesContainer").appendChild(newtable);
+    }
+
+    function insertCell(newrow, cellNum, innerHtml, className) {
+        newTd = newrow.insertCell(cellNum);
+        newTd.innerHTML = innerHtml;
+        newTd.className = className;         
+        return newTd;
+    }
+    function createLogTables(entry, summary, runid) {
+        var table = document.getElementById('tbl' + summary);
+        var newrow = table.insertRow(-1);
+        var i=0;
+        insertCell(newrow, i++, entry['ToolName'], "AlignCenter");
+        insertCell(newrow, i++, entry['Instance'], "AlignCenter");
+        insertCell(newrow, i++, entry['ToolVersion'], "AlignCenter");
+        insertCell(newrow, i++, entry['FormattedStartTime'], "AlignCenter");
+        insertCell(newrow, i++, entry['FormattedStopTime'], "AlignCenter");
+        insertCell(newrow, i++, entry['FormattedElapsedTime'], "AlignCenter");
+        insertCell(newrow, i++, entry['ErrorCode'], "AlignCenter");
+        insertCell(newrow, i++, entry['FailureId'], "AlignCenter");
+        newTd=insertCell(newrow, i++, getResult(entry['FormattedResult']), "AlignCenter " + getResultTypeClass(entry.ResultType));
+        newTd.id = entry['Result'];
+        newTd = newrow.insertCell(i++);
+        table.appendChild(newrow);
+        if (entry['LogData'] == null || entry['LogData'] == "") {
+            newTd.innerHTML = "";
+        }
+        else {
+            var ssd = entry['ToolName'].substring(0, 3);
+            var button = document.createElement('button');
+
+            button.innerHTML = "Show log";
+            button.id = 'tog' + ssd + runid.toString();
+            button.className = "AlignCenter";
+            button.onclick = function () {
+                var idtoToggle = this.id.substring(3, this.id.length);
+                toggleRow(idtoToggle);
+            }
+            newTd.className = "AlignCenter";
+            newTd.appendChild(button);
+            newrow = table.insertRow(-1);
+            newrow.style.display = "none";
+            newrow.id = ssd + runid.toString();
+            newTd = newrow.insertCell(0);
+            var logdata = entry['LogData'];
+            logdata = logdata.replace(/(\r\n|\n|\r)/g, "<br />");
+            newTd.innerHTML = logdata;
+            newTd.id = ssd + runid.toString() + "loginfo";
+            newTd.className = 'AlignLeftFontSize';
+            document.getElementById(ssd + runid.toString() + "loginfo").colSpan = 7;
+            table.appendChild(newrow);
+        }
+    }
+
+    function getResultTypeClass(resultType) {
+        var className = "";
+        if (resultType == 1) {
+            className = "passed";
+        }
+        else if (resultType == 2) {
+            className = "failed";
+        }
+        return className;
+    }
+
+    // TODO: cancel will return passed
+    function getResult(result) {
+        return result;
+        //if (result == "Execution Failed")
+        //    return result;
+        //return "Execution Passed";
+    }
+    function toggleTable(tname,bname)
+    {
+        var elem=document.getElementById(tname);
+        var button=document.getElementById("tog"+ bname);
+        var hide=elem.style.display =="none";
+        if (hide) {
+            elem.style.display="table";
+            button.innerHTML = "Hide";
+        }
+        else {
+            elem.style.display="none";
+            button.innerHTML = "Show";
+        }
+    }
+
+</script>
+<script type="text/javascript">
+    function toggleRow(Rname)
+    {
+        var elem=document.getElementById(Rname);
+        var button=document.getElementById("tog"+ Rname);
+        var hide = elem.style.display =="none";
+        if (hide) {
+            elem.style.display="";
+            button.innerHTML = "Hide log";
+        }
+        else {
+            elem.style.display="none";
+            button.innerHTML = "Show log";
+        }
+    }
+
+    function toggleInfoDisplay() {
+        var elem = document.getElementById("productInfoContainer");
+        var hide=elem.style.display =="none";
+        if (hide) {
+            elem.style.display = "block";
+        }
+        else {
+            elem.style.display = "none";
+        }
+
+        var desiredWidth = window.innerWidth;
+
+        var headerHeight = (document.getElementById("mainNav") || {}).offsetHeight;
+        var windowHeight = window.innerHeight;
+
+        var platformInfoElem = document.getElementById("tablesContainer");
+
+        var elemHeight = document.getElementById("PlatformInfo").offsetHeight;
+
+        var otherHeight = document.getElementById("productInfoContainer").clientHeight;
+
+        var desiredHeight = windowHeight - headerHeight - (elemHeight - platformInfoElem.offsetHeight) - 75;
+
+        platformInfoElem.style.height = desiredHeight + "px";
+    }
+
+</script>
+<html> <body onload = 'AppendData()'>
+<h4 id="Header" style="font-weight: bold; text-align: center;"></h4>
+<div id="PlatformInfo" style="padding-left: 10px; padding-right: 10px;">
+    <div style="float: left; width: 100%; margin-bottom: 10px;">
+        <button onclick="toggleInfoDisplay()" id="Expand">ExpandCollapse</button>
+        <button ng-click="logs.saveFiles()" id='SaveFiles' style='display: none;'>SaveLogFiles</button>
+    </div>
+    <div id="productInfoContainer" style="margin-bottom: 10px;">
+        <div><b>System under test</b></div>
+    </div>
+    <div id="tablesContainer" style="overflow: scroll; width: 100%;"></div>
+</div>
+</body>
+</html>
